@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 table, th, td {
     border: 1px solid rgb(57, 133, 255);
   }
@@ -24,3 +25,35 @@ table, th, td {
     
   }
   
+
+body {
+    color: rgb(16, 15, 15);
+    background-color: aliceblue;
+    margin-top: 5%;
+
+  }
+
+table{
+  border: 1px;
+  padding: auto;
+  width: 80%;
+  background: rgb(246, 243, 223);
+  border-collapse: collapse;
+  border: 1px solid #141313;
+}
+td, th {
+  border: 1px solid #141313;
+  text-align: center;
+  padding: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #daa877;
+}
+
+img {
+  border-radius: 50px;
+  align-items: center;
+
+}
+
