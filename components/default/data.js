@@ -104,7 +104,11 @@ export const SIDEBAR = [
 
 
     {
+
         href: '/ploy-table',
+
+        href: '/mind-table',
+
 
    
         {
@@ -135,7 +139,10 @@ export const SIDEBAR = [
             <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
         </svg>,
 
-        label: 'Ploy Table',
+
+
+        label: 'Mind Tabla',
+
 
         label: 'Prim Table',
 
