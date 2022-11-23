@@ -4,7 +4,7 @@
 
 
 
-table, th, td {
+/* table, th, td {
     border: 1px solid rgb(57, 133, 255);
   }
   
@@ -16,7 +16,7 @@ table, th, td {
   th {
     height: 50px;
     background: rgb(29, 118, 174);
-    /* text-align: center; */
+    text-align: center;
     padding: auto;
   }
   td {
@@ -157,5 +157,5 @@ img {
   border-radius: 50px;
   align-items: center;
 
-}
+} */
 

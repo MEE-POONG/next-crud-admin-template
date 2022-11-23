@@ -15,7 +15,11 @@ export default async function products(req, res) {
             res.status(200).json({ data });
             break
         case 'POST':
-            res.status(200).json('ยังไม่ได้เขียน API จ้า');
+            try {
+                console.log(req.body, req.query);
+            } catch (error) {
+                res.status(400).json({ error });
+            }
             break
         default:
             res.setHeader('Allow', ['GET', 'POST'])

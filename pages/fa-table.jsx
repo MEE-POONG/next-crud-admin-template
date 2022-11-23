@@ -14,12 +14,10 @@ export default function FaTable() {
             <div style={{}}>
                 <button onClick={refetch}>refetch</button>
 
-                <div>
-                    title product lists
-                </div>
+              
                 <div>
                     <table style={{ width: "100%", backgroundColor: "#e7e9eb" }}>
-                        <tr style={{ backgroundColor: " rgb(4 122 16)", fontSize: "30px", }}>
+                        <tr style={{ backgroundColor: " rgb(143 152 157 / 38%)", fontSize: "30px", }}>
                             <th>ชื่อสินค้า</th>
                             <th>ราคา</th>
                             <th>รายละเอีย</th>

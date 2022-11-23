@@ -9,11 +9,11 @@ datasource db {
 
 model Product {
   id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name String
-  price Int
-  description String
-  image String
-  category String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  name String?
+  price Int?
+  description String?
+  image String?
+  category String?
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
 }

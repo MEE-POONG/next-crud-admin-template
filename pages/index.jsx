@@ -1,30 +1,38 @@
-import DefaultLayout from '@/components/default/layout'
-import useAxios from 'axios-hooks'
+import prisma from "@/lib/prisma";
 
-export default function App() {
-  const [{ data, loading, error }, refetch] = useAxios(
-    'http://localhost:3000/api/products'
-  )
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error!</p>
+export default async function products(req, res) {
 
-  return (
-    <DefaultLayout>
-      <button onClick={refetch}>refetch</button>
+  const { method } = req;
 
-      <center> Title products lists</center>
-      <center>
-        {data.data.map((e, index) => (
-          <div key={index}>
-            <img src={e.image} width="100px" height="100px" />
-            <div> name: {e.name}</div>
-            <div> price: {e.price}</div>
-            <div> description: {e.description}</div>
-            <div> category: {e.category}</div>
-          </div>
-        ))}
-      </center>
-    </DefaultLayout>
-  )
+  switch (method) {
+    case 'GET':
+      const data = await prisma.product.findMany({
+        orderBy: {
+          name: 'asc'
+        }
+      });
+      res.status(200).json({ data });
+      break
+    case 'POST':
+      try {
+        await prisma.product.create({
+          data: {
+            name: req.body.name,
+            price: +req.body.price,
+            description: req.body.description,
+            image: req.body.image,
+            category: req.body.category,
+
+          }
+        })
+        res.status(201).json({ message: 'Product created' })
+      } catch (error) {
+        res.status(400).json({ error });
+      }
+      break
+    default:
+      res.setHeader('Allow', ['GET', 'POST'])
+      res.status(405).end(`Method ${ method } Not Allowed`)
+  }
 }
